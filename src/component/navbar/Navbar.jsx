@@ -27,7 +27,7 @@ class Navbar extends React.Component {
 
     render() {
         return (
-            <nav className="navbar navbar-light left" id="ddlion-navbar" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
+            <nav className="navbar navbar-light left show" id="ddlion-navbar" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
                 <div className="container">
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                         aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
