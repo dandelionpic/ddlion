@@ -44,7 +44,7 @@ class WaterFall extends React.Component {
         return this.state.arrayList.map(function (item, index) {
             return (
                 <div className="item" key={index} style={item.style}>
-                    {item.title}
+                    <img src={item.url} alt={item.url} />
                 </div>
             );
         });

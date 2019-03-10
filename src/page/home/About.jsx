@@ -16,7 +16,7 @@ class About extends React.Component {
 
                         <Row>
                             <Col span={12} className="about-img">
-                                <img src='https://bootstrapmade.com/demo/themes/Alstar/img/about-img.jpg'></img>
+                                <img src='https://bootstrapmade.com/demo/themes/Alstar/img/about-img.jpg' alt="about-us-pics"></img>
                             </Col>
                             <Col span={12} className="content">
                                 <h2>Dandelion Pictures Inc. </h2>

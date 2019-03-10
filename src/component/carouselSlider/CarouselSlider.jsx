@@ -14,6 +14,7 @@ class CarouselSlider extends React.Component {
                     <h2 className="slider-title">
                         <span className="inner-circle">
                             <span></span><br />
+                            {/* <img src="https://i.postimg.cc/bzTLyycs/logo.png" style={{width: 150, height: }}/> */}
                             <span>ddLion</span>
                         </span>
                     </h2>
