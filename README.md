@@ -1,5 +1,5 @@
 # ddlion
-The home page of Dandelion Pictures
+The home page of Dandelion Pictures Inc.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
