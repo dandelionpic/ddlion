@@ -621,31 +621,51 @@
      $('#con_submit').click(function(e) {
        e.preventDefault();
 
-       const name = $('.contact-form').find('input[name="con_name"]').val();
-       const email = $('.contact-form').find('input[name="con_email"]').val();
-       const message = $('.contact-form').find('textarea[name="con_message"]').val();
+       const name = $('.contact-form').find('input[name="con_name"]');
+       const email = $('.contact-form').find('input[name="con_email"]');
+       const message = $('.contact-form').find('textarea[name="con_message"]');
 
-       if (validateEmail(email)) {
+       if (validateEmail(email.val())) {
 
          const data = {
-           name,
-           email,
-           message
+           name: name.val(),
+           email: email.val(),
+           message: message.val()
          };
 
-         console.log(data)
          axios.post('/api/comments', data)
            .then(function(res) {
-             console.log(res)
+             name.val('');
+             email.val('');
+             message.val('');
+             toastr.options = {
+               "closeButton": false,
+               "debug": false,
+               "newestOnTop": false,
+               "progressBar": false,
+               "positionClass": "toast-top-center",
+               "preventDuplicates": false,
+               "onclick": null,
+               "showDuration": "300",
+               "hideDuration": "1000",
+               "timeOut": "5000",
+               "extendedTimeOut": "1000",
+               "showEasing": "swing",
+               "hideEasing": "linear",
+               "showMethod": "fadeIn",
+               "hideMethod": "fadeOut"
+             }
+             toastr.success('We got your message, Thank you!')
            })
            .catch(function(err) {
+             toastr.error('I do not think that word means what you think it means.', 'Inconceivable!')
              console.log(err)
            })
-       }else{
-          const emailForm = $('.contact-form').find('input[name="con_email"]');
-          emailForm.val('');
-          emailForm.attr('placeholder', '111');
-
+       } else {
+         const emailForm = $('.contact-form').find('input[name="con_email"]');
+         emailForm.val('');
+         emailForm.addClass('email-error');
+         emailForm.attr('placeholder', 'Please input correct email address!');
        }
      });
    }
